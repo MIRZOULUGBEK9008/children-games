@@ -57,12 +57,12 @@ const gameStart = () => {
 };
 startGame.addEventListener("click", () => {
   gameStart();
-  let time = 5;
+  let time = 8;
   setInterval(() => {
     time--;
     console.log(time.toString().padStart(2, "0"));
     if (!time) {
-      time = 5;
+      time = 8;
       gameStart();
     }
   }, 1000);
@@ -71,11 +71,11 @@ elsTableData.forEach(element => {
   element.addEventListener("click", () => {
     if (element.textContent != result) {
       audioFail.play();
-      time = 5;
+      time = 8;
       gameStart();
     } else {
       audioSucces.play();
-      time = 5;
+      time = 8;
       gameStart();
     }
   });
