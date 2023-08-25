@@ -1,12 +1,16 @@
 /* CUSTOM-PROPS */
 :root {
   --black: #000;
-  --white: #fff;
 
   --yellow: #ebe76c;
+  --white: #fff;
+  --yellowish: #f7ec09;
   --green: #f0b86e;
+  --light-blue: #30a2ff;
   --pink: #ed7b7b;
-  --blue: #836096;
+  --dark-pink: #749bc2;
+  --dark-blue: #836096;
+  --blue: #b0daff;
 
 }
 
@@ -30,7 +34,7 @@
   width: 100%;
   height: 100%;
   z-index: 999;
-  background-color: var(--blue);
+  background-color: var(--dark-blue);
   transition: opacity 0.3s ease;
 }
 
@@ -79,10 +83,10 @@ body {
   display: flex;
   flex-direction: column;
   height: 100%;
-  background-color: var(--white);
+  background-color: #11e2f5;
   color: var(--black);
   font-family: "Smeshariki", "Arial", sans-serif;
-  font-size: 1.6rem;
+  font-size: 3rem;
   line-height: 1.2;
   padding: 0;
   margin: 0;
@@ -137,8 +141,8 @@ img {
   height: 100%;
   left: 0;
   top: 0;
-  background-color: var(--blue);
-  color: var(--yellow);
+  background-color: var(--yellow);
+  color: var(--dark-blue);
   transition: transform 2.4s ease;
   z-index: 888;
 }
@@ -200,17 +204,59 @@ img {
 
 /* SECTION-GAME  */
 .section-game__container {
+  width: 100%;
+  max-width: 55rem;
   margin-top: 4rem;
   border-radius: 2.5rem;
-  max-width: 55rem;
-  background-color: #30A2FF;
-  color: #ffe7a0;
+  background-color: var(--light-blue);
+  color: var(--yellowish);
   box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px;
 }
 
 .section-game__content {
   padding: 2rem;
-  margin: 0;
+  margin-top: 0;
+  margin-bottom: 5rem;
   text-align: center;
   font-size: 10rem;
+  user-select: none;
+}
+
+.section-game__table {
+  border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
+  min-height: 40rem;
+  min-width: 40rem;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.section-game__table,
+.game-table__row,
+.game-table__data {
+  border: 2px solid var(--dark-pink);
+}
+
+.game-table__row {
+  cursor: pointer;
+  border-radius: 2rem;
+}
+
+.game-table__data {
+  text-align: center;
+  padding: 0;
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.game-table__data:hover {
+  transform: scale(1.125);
+  z-index: 200;
+}
+
+.game-table__data-inner {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }

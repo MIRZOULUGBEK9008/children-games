@@ -31,13 +31,13 @@
     <div class="overlay__container container">
       <div class="overlay__content">
         <h1 class="overlay__title">Hi kid 👋</h1>
-        <p class="overlay__description">This game for children. It helps to improve your IQ level. Find Muhammad ibn
+        <p class="overlay__description">This game is for children. It helps you improve your IQ level. Find correct
+          answers from Muhammad ibn
           Musa al-Khorezmi's table. Click to start...</p>
-        <button class="overlay__button" type="button" onclick="overlayUp()">Start game</button>
+        <button id="startGame" class="overlay__button" type="button">Start game</button>
       </div>
     </div>
-    <audio id="audioStart" src="audios/game-start.mp3"></audio>
-    <audio id="audioSucces" src="audios/success.mp3"></audio>
+    <audio id="audioSucces" src="audios/succes.mp3"></audio>
     <audio id="audioFail" src="audios/fail.mp3"></audio>
   </div>
 
@@ -47,6 +47,65 @@
     <div class="section-game__container container">
       <p class="section-game__content" id="randomZone"></p>
     </div>
+    <table class="section-game__table game-table" id="table">
+      <tr class="game-table__row">
+        <td class="game-table__data">
+          <span class="game-table__data-inner js-table-data"></span>
+        </td>
+        <td class="game-table__data">
+          <span class="game-table__data-inner js-table-data"></span>
+        </td>
+        <td class="game-table__data">
+          <span class="game-table__data-inner js-table-data"></span>
+        </td>
+        <td class="game-table__data">
+          <span class="game-table__data-inner js-table-data"></span>
+        </td>
+      </tr>
+      <tr class="game-table__row">
+        <td class="game-table__data">
+          <span class="game-table__data-inner js-table-data"></span>
+        </td>
+        <td class="game-table__data">
+          <span class="game-table__data-inner js-table-data"></span>
+        </td>
+        <td class="game-table__data">
+          <span class="game-table__data-inner js-table-data"></span>
+        </td>
+        <td class="game-table__data">
+          <span class="game-table__data-inner js-table-data"></span>
+        </td>
+      </tr>
+      <tr class="game-table__row">
+        <td class="game-table__data">
+          <span class="game-table__data-inner js-table-data"></span>
+        </td>
+        <td class="game-table__data">
+          <span class="game-table__data-inner js-table-data"></span>
+        </td>
+        <td class="game-table__data">
+          <span class="game-table__data-inner js-table-data"></span>
+        </td>
+        <td class="game-table__data">
+          <span class="game-table__data-inner js-table-data"></span>
+        </td>
+      </tr>
+      <tr class="game-table__row">
+        <td class="game-table__data">
+          <span class="game-table__data-inner js-table-data"></span>
+        </td>
+        <td class="game-table__data">
+          <span class="game-table__data-inner js-table-data"></span>
+        </td>
+        <td class="game-table__data">
+          <span class="game-table__data-inner js-table-data"></span>
+        </td>
+        <td class="game-table__data">
+          <span class="game-table__data-inner js-table-data"></span>
+        </td>
+      </tr>
+    </table>
+
   </section>
 
   <script src="js/main.js"></script>

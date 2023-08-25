@@ -1,5 +1,7 @@
 // LOADER
-const elLoader = document.querySelector('.js-loader');
+const elLoader = document.querySelector(".js-loader");
+const elsTableData = document.querySelectorAll(".js-table-data");
+let checkClicked = false, result;
 
 document.addEventListener('DOMContentLoaded', () => {
   setTimeout(() => {
@@ -8,17 +10,73 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // OVERLAY UP
-const overlayUp = () => {
+const gameStart = () => {
   overlay.classList.add("overlay--hidden");
-  audioStart.play();
-  let randomNumberOne = Math.floor(Math.random() * 10) + 1,
-    randomNumberTwo = Math.floor(Math.random() * 10) + 1;
+  let randomNumberOne = Math.round(Math.random() * 10),
+    randomNumberTwo = Math.round(Math.random() * 10);
+  const resultStr = `${randomNumberOne} * ${randomNumberTwo}`;
+  result = Function("return " + resultStr)();
+  randomZone.textContent = resultStr;
+  randomNumberOne = Math.round(Math.random() * 10);
+  randomNumberTwo = Math.round(Math.random() * 10);
 
-  randomZone.textContent = `${randomNumberOne} * ${randomNumberTwo}`;
-  setInterval(() => {
-    randomNumberOne = Math.floor(Math.random() * 10) + 1;
-    randomNumberTwo = Math.floor(Math.random() * 10) + 1;
-    randomZone.textContent = `${randomNumberOne} * ${randomNumberTwo}`;
-    // audioFail.play();
-  }, 4000);
+
+  const randomIndex = Math.round(Math.random() * 16);
+  const randomNumbersArr = [];
+  while (!(randomNumbersArr.length == 16)) {
+    const randomAns = Math.round(Math.random() * 100);
+    if (!(randomNumbersArr.includes(randomAns))) {
+      randomNumbersArr.push(randomAns);
+    }
+  }
+  elsTableData.forEach((data, index) => {
+    if (index < 4 || (index > 7 && index < 12)) {
+      if (index % 2) {
+        data.parentElement.style.backgroundColor = "#30a2ff";
+        data.parentElement.style.color = "#f7ec09";
+      } else {
+        data.parentElement.style.backgroundColor = "#f7ec09";
+        data.parentElement.style.color = "#30a2ff";
+      }
+    } else {
+      if (!(index % 2)) {
+        data.parentElement.style.backgroundColor = "#30a2ff";
+        data.parentElement.style.color = "#f7ec09";
+      } else {
+        data.parentElement.style.backgroundColor = "#f7ec09";
+        data.parentElement.style.color = "#30a2ff";
+      }
+    }
+    if (randomIndex == index) {
+      data.textContent = result;
+    } else {
+      data.textContent = randomNumbersArr[index];
+    }
+  });
+  checkClicked = true;
 };
+startGame.addEventListener("click", () => {
+  gameStart();
+  let time = 5;
+  setInterval(() => {
+    time--;
+    console.log(time.toString().padStart(2, "0"));
+    if (!time) {
+      time = 5;
+      gameStart();
+    }
+  }, 1000);
+});
+elsTableData.forEach(element => {
+  element.addEventListener("click", () => {
+    if (element.textContent != result) {
+      audioFail.play();
+      time = 5;
+      gameStart();
+    } else {
+      audioSucces.play();
+      time = 5;
+      gameStart();
+    }
+  });
+});
