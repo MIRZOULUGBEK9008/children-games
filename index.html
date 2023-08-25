@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Muhammad ibn Musa al-Khorezmi's table for children</title>
+  <title>Math game table for children</title>
 
   <!-- FAVICON  -->
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -37,15 +37,23 @@
         <button id="startGame" class="overlay__button" type="button">Start game</button>
       </div>
     </div>
-    <audio id="audioSucces" src="audios/succes.mp3"></audio>
-    <audio id="audioFail" src="audios/fail.mp3"></audio>
+    <audio id="audioStart" src="audios/start.mp3"></audio>
+    <audio id="audioCorrect" src="audios/correct.mp3"></audio>
+    <audio id="audioWrong" src="audios/wrong.mp3"></audio>
   </div>
 
+
+  <!-- OVERLAY GOODLUCK -->
+  <div class="overlay-goodluck" id="overlayGoodluck">
+    <h2 class="overlay-goodluck__title">Goodluck 😊</h2>
+  </div>
 
   <!-- SECTION-GAME -->
   <section class="section-game">
     <div class="section-game__container container">
-      <p class="section-game__content" id="randomZone"></p>
+      <h2 class="section-game__title visually-hidden">Game zone</h2>
+      <span class="section-game__content" id="randomZone"></span>
+      <span class="section-game__timer" id="timer"></span>
     </div>
     <table class="section-game__table game-table" id="table">
       <tr class="game-table__row">
