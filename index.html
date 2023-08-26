@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Math game table for children</title>
+  <title>Funny arithmetic game for 0 - 10 aged children</title>
 
   <!-- FAVICON  -->
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -24,40 +24,6 @@
   <!-- LOADER  -->
   <div class="loader-wrapper js-loader">
     <span class="loader"></span>
-  </div>
-
-  <!-- OVERLAY  -->
-  <div class="overlay" id="overlay">
-    <div class="overlay__container container">
-      <div class="overlay__content">
-        <h1 class="overlay__title">Hi kid 👋</h1>
-        <p class="overlay__description">Funny arithmetic game for 0 - 10 aged children. Play and check your speed of
-          thinking.</p>
-        <button class="overlay__button" type="button" id="startGame">Start game</button>
-      </div>
-    </div>
-
-    <!-- Game audios  -->
-    <audio id="audioStart" src="audios/start.mp3"></audio>
-    <audio id="audioCorrect" src="audios/correct.mp3"></audio>
-    <audio id="audioWrong" src="audios/wrong.mp3"></audio>
-    <audio id="audioGameOver" src="audios/game-over.mp3"></audio>
-  </div>
-
-
-  <!-- OVERLAY GOODLUCK -->
-  <div class="overlay-goodluck" id="overlayGoodluck">
-    <div class="overlay-goodluck__content">
-      <h2 class="overlay-goodluck__title">Goodluck 😊</h2>
-      <p class="overlay-goodluck__descrption">Note: If you will face with the sign "%", that means you should find the
-        remainder of a
-        division ex: 9 % 2 = 1 because 9 / 2 = 4 and the remainder is 1
-      </p>
-      <p class="overlay-goodluck__descrption">If you find 10 times correct answer, you will win.<br>You lose if there
-        are
-        more incorrect answers than correct answers</p>
-      <button class="overlay-goodluck__button" type="button" id="gameContinue">Continue 😎</button>
-    </div>
   </div>
 
   <!-- SECTION-GAME -->
@@ -129,9 +95,51 @@
         </td>
       </tr>
     </table>
-
   </section>
 
+  <!-- OVERLAY  -->
+  <div class="overlay" id="overlay">
+    <div class="overlay__container container">
+      <div class="overlay__content">
+        <h1 class="overlay__title">Hi kid 👋</h1>
+        <p class="overlay__description">Funny arithmetic game for 0 - 10 aged children. Play and check your speed of
+          thinking.</p>
+        <button class="overlay__button" type="button" id="startGame">Start game</button>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- OVERLAY GOODLUCK -->
+  <div class="overlay-goodluck" id="overlayGoodluck">
+    <div class="overlay-goodluck__content">
+      <h2 class="overlay-goodluck__title">Goodluck 😊</h2>
+      <p class="overlay-goodluck__descrption">Note: If you will face with the sign "%", that means you should find the
+        remainder of a
+        division ex: 9 % 2 = 1 because 9 / 2 = 4 and the remainder is 1
+      </p>
+      <p class="overlay-goodluck__descrption">If you find 10 times correct answer, you will win.<br>You lose if there
+        are
+        more incorrect answers than correct answers</p>
+      <button class="overlay-goodluck__button" type="button" id="gameContinue">Continue 😎</button>
+    </div>
+  </div>
+
+  <div class="overlay-win-lose" id="gameOverOrWin">
+    <div class="overlay-win-lose__inner">
+      <h2 class="overlay-win-lose__title" id="gameOverOrWinTitle"></h2>
+      <button class="overlay-win-lose__button" id="gameOverOrWinController">Again 🗘</button>
+    </div>
+  </div>
+
+  <!-- Game audios  -->
+  <audio id="audioStart" src="audios/start.mp3"></audio>
+  <audio id="audioCorrect" src="audios/correct.mp3"></audio>
+  <audio id="audioWrong" src="audios/wrong.mp3"></audio>
+  <audio id="audioGameOver" src="audios/game-over.mp3"></audio>
+  <audio id="audioWin" src="audios/win.mp3"></audio>
+
+  <!-- JS  -->
   <script src="js/main.js"></script>
 </body>
 

@@ -235,13 +235,15 @@ img {
   margin-bottom: 2rem;
   font-size: 8rem;
   color: var(--yellowish);
+  letter-spacing: 0.3rem;
 }
 
 .overlay-goodluck__descrption {
   margin-top: 0;
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem;
   color: var(--yellow);
   font-size: 3rem;
+  letter-spacing: 0.2rem;
 }
 
 .overlay-goodluck__button {
@@ -364,4 +366,63 @@ img {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
+}
+
+
+/* GAME OVER OR WIN  */
+.overlay-win-lose {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  user-select: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.overlay-win-lose--win {
+  opacity: 1;
+  background-color: var(--light-blue);
+  color: var(--yellowish);
+  pointer-events: all;
+}
+
+.overlay-win-lose--lose {
+  opacity: 1;
+  background-color: var(--dark-pink);
+  color: var(--yellow);
+  pointer-events: all;
+}
+
+.overlay-win-lose__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.overlay-win-lose__title {
+  margin-top: 0;
+  margin-bottom: 2rem;
+  letter-spacing: 0.3rem;
+  font-size: 12rem;
+}
+
+.overlay-win-lose__button {
+  display: block;
+  font-size: 4rem;
+  padding: 1.5rem 3rem;
+  border: 0;
+  border-radius: 1rem;
+  color: var(--yellowish);
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.overlay-win-lose__button:hover {
+  text-decoration: underline;
 }

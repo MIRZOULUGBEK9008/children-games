@@ -109,6 +109,13 @@ elsTableData.forEach(element => {
       element.textContent = "😔";
       // Score
       wrong.textContent = Number(wrong.textContent) + 1;
+      if (wrong.textContent > correct.textContent) {
+        setTimeout(() => {
+          gameOverOrWinTitle.textContent = "You lose 😜";
+          gameOverOrWin.classList.add("overlay-win-lose--lose");
+          audioGameOver.play();
+        }, 800);
+      }
       setTimeout(() => {
         gameStart();
       }, 1000);
@@ -117,10 +124,20 @@ elsTableData.forEach(element => {
       element.textContent = "👌";
       // Score
       correct.textContent = Number(correct.textContent) + 1;
+      if (correct.textContent == 10) {
+        setTimeout(() => {
+          gameOverOrWinTitle.textContent = "You win 👏";
+          gameOverOrWin.classList.add("overlay-win-lose--win");
+          audioWin.play();
+        }, 600);
+      }
       setTimeout(() => {
         gameStart();
       }, 1000);
     }
     timer.classList.add("section-game__timer--none");
   });
+});
+gameOverOrWinController.addEventListener("click", () => {
+  window.location.reload();
 });
