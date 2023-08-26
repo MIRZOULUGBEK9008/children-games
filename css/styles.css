@@ -206,7 +206,6 @@ img {
 /* OVERLAY-GOODLUCK  */
 .overlay-goodluck {
   display: flex;
-  display: none;
   align-items: center;
   justify-content: center;
   position: absolute;
@@ -223,10 +222,47 @@ img {
   pointer-events: none;
 }
 
+.overlay-goodluck__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 65rem;
+  text-align: center;
+}
+
 .overlay-goodluck__title {
-  margin: 0;
+  margin-top: 0;
+  margin-bottom: 2rem;
+  font-size: 8rem;
+  color: var(--yellowish);
+}
+
+.overlay-goodluck__descrption {
+  margin-top: 0;
+  margin-bottom: 2rem;
   color: var(--yellow);
-  font-size: 12rem;
+  font-size: 3rem;
+}
+
+.overlay-goodluck__button {
+  font-size: 4rem;
+  padding: 1rem 2rem;
+  border: 0;
+  border-radius: 1rem;
+  background-color: var(--yellow);
+  color: var(--pink);
+  cursor: pointer;
+  transition: box-shadow 0.3s ease,
+    transform 0.3s ease;
+}
+
+.overlay-goodluck__button:hover {
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+}
+
+.overlay-goodluck__button:active {
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+  transform: scale(0.9);
 }
 
 /* SECTION-GAME  */
@@ -250,17 +286,25 @@ img {
   user-select: none;
 }
 
-.section-game__timer {
+.section-game__status {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translate(-50%, 50%);
+  width: 100%;
+  font-size: 2.5rem;
+}
+
+.box {
   display: block;
   width: 13rem;
   text-align: center;
   padding: 0.5rem 3rem;
   border-radius: 0.5rem;
   background-color: var(--pink);
-  position: absolute;
-  left: 50%;
-  bottom: 0;
-  transform: translate(-50%, 50%);
   box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
   user-select: none;
   transition: opacity 0.2s ease;

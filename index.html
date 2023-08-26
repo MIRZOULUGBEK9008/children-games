@@ -31,21 +31,33 @@
     <div class="overlay__container container">
       <div class="overlay__content">
         <h1 class="overlay__title">Hi kid 👋</h1>
-        <p class="overlay__description">This game is for children. It helps you improve your IQ level. Find correct
-          answers from Muhammad ibn
-          Musa al-Khorezmi's table. Click to start...</p>
-        <button id="startGame" class="overlay__button" type="button">Start game</button>
+        <p class="overlay__description">Funny arithmetic game for 0 - 10 aged children. Play and check your speed of
+          thinking.</p>
+        <button class="overlay__button" type="button" id="startGame">Start game</button>
       </div>
     </div>
+
+    <!-- Game audios  -->
     <audio id="audioStart" src="audios/start.mp3"></audio>
     <audio id="audioCorrect" src="audios/correct.mp3"></audio>
     <audio id="audioWrong" src="audios/wrong.mp3"></audio>
+    <audio id="audioGameOver" src="audios/game-over.mp3"></audio>
   </div>
 
 
   <!-- OVERLAY GOODLUCK -->
   <div class="overlay-goodluck" id="overlayGoodluck">
-    <h2 class="overlay-goodluck__title">Goodluck 😊</h2>
+    <div class="overlay-goodluck__content">
+      <h2 class="overlay-goodluck__title">Goodluck 😊</h2>
+      <p class="overlay-goodluck__descrption">Note: If you will face with the sign "%", that means you should find the
+        remainder of a
+        division ex: 9 % 2 = 1 because 9 / 2 = 4 and the remainder is 1
+      </p>
+      <p class="overlay-goodluck__descrption">If you find 10 times correct answer, you will win.<br>You lose if there
+        are
+        more incorrect answers than correct answers</p>
+      <button class="overlay-goodluck__button" type="button" id="gameContinue">Continue 😎</button>
+    </div>
   </div>
 
   <!-- SECTION-GAME -->
@@ -53,7 +65,11 @@
     <div class="section-game__container container">
       <h2 class="section-game__title visually-hidden">Game zone</h2>
       <span class="section-game__content" id="randomZone"></span>
-      <span class="section-game__timer" id="timer"></span>
+      <div class="section-game__status">
+        <span class="section-game__correct-answer box">👌 - <b id="correct">0</b></span>
+        <span class="section-game__timer box" id="timer"></span>
+        <span class="section-game__wrong-answer box">😔 - <b id="wrong">0</b></span>
+      </div>
     </div>
     <table class="section-game__table game-table" id="table">
       <tr class="game-table__row">
