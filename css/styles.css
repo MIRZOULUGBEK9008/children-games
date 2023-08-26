@@ -383,6 +383,7 @@ img {
   opacity: 0;
   transition: opacity 0.3s ease;
   pointer-events: none;
+  z-index: 900;
 }
 
 .overlay-win-lose--win {
